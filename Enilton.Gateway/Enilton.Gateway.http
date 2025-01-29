@@ -1,0 +1,6 @@
+@Enilton.Gateway_HostAddress = http://localhost:5171
+
+GET {{Enilton.Gateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

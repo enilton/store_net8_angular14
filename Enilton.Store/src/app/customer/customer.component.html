@@ -1,0 +1,23 @@
+<div>
+  <h2>Customer Management</h2>
+  <form (ngSubmit)="saveCustomer()">
+    <input type="hidden" [(ngModel)]="customer.id" name="id" />
+    <label>Name:</label>
+    <input [(ngModel)]="customer.name" name="name" required />
+    <label>Email:</label>
+    <input [(ngModel)]="customer.email" name="email" required />
+    <label>Phone:</label>
+    <input [(ngModel)]="customer.phone" name="phone" required />
+    <button type="submit">{{ customer.id ? 'Update' : 'Create' }}</button>
+    <button type="button" (click)="resetForm()">Reset</button>
+  </form>
+  <hr />
+  <h3>Customer List</h3>
+  <ul>
+    <li *ngFor="let cust of customers">
+      {{ cust.name }} ({{ cust.email }} - {{ cust.phone }})
+      <button (click)="editCustomer(cust)">Edit</button>
+      <button (click)="deleteCustomer(cust.id)">Delete</button>
+    </li>
+  </ul>
+</div>
